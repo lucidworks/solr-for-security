@@ -1,0 +1,54 @@
+<html>
+<head><title>Solr for Security</title></head>
+<body>
+<div><img src="./lucid-works.svg" alt="Lucidworks" width="160" height="27" class="white-logo">
+</div>
+<h1>Introduction</h1>
+
+<div>Solr is a phenomonal tool for IT operations, including monitoring security events.  It allows you to quickly explore data sets no matter the format and then
+  build out to do a wide variety of analysis across a lot of different data types.
+  In this tutorial, we'll explore how Solr can be used for security by looking at the <a
+      href="http://www.takakura.com/Kyoto_data/">Kyoto honeypot</a> data set.
+</div>
+
+<h1>Getting started</h1>
+
+<div>
+  <ul>
+    <li><a href="http://lucene.apache.org/solr/mirrors-solr-latest-redir.html">Download Solr 5</a> into this directory and unpack it.</li>
+    <li>./setup.sh</li>
+  </ul>
+</div>
+<h1>Get Ready</h1>
+
+<div>
+  <il>
+    <li>./index-post.sh</li>
+    <li>./start-silk.sh</li>
+  </il>
+</div>
+<h1>Solr 5 Security Example</h1>
+
+<div>
+  <h2>Start</h2>
+
+  <div>
+    <ul>
+      <li><a href="http://localhost:3334/#/dashboard">Visualize</a></li>
+      <li><a
+          href="http://localhost:8983/solr/kyoto_sample/select?q=*%3A*&rows=1&wt=json&indent=true&facet=true&facet.pivot={!stats=piv1}source_ip_address_s,dest_ip_address_s&stats=true&stats.field={!tag=piv1}duration_d">Most popular source and destination with stats on time</a></li>
+    </ul>
+  </div>
+</div>
+<h1>Resources</h1>
+
+<div>
+  <ul>
+    <li>Kyoto Data: <a href="http://www.takakura.com/Kyoto_data/">http://www.takakura.com/Kyoto_data/</a></li>
+    <li><a href="http://lucene.apache.org/solr">Get Solr</a>
+    <li>Delete a collection: curl "http://localhost:8983/solr/admin/collections?action=DELETE&name=kyoto_sample"</li>
+  </ul>
+
+</div>
+</body>
+<html>

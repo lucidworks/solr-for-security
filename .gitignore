@@ -2,6 +2,10 @@
 __pycache__/
 *.py[cod]
 
+*.iml
+.idea
+solr-5.0.0*
+
 # C extensions
 *.so
 
